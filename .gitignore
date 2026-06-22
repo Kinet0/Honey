@@ -1,0 +1,73 @@
+# Git ignore for Honeypot Dashboard
+
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Testing
+/coverage
+.pytest_cache/
+
+# Next.js
+/.next/
+/out/
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.pydevproject
+
+# OS
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+
+# Docker
+docker-compose.override.yml
+
+# Backups
+*.backup
+*.bak
+*.old
+
+# Temporary files
+tmp/
+temp/
+*.tmp
