@@ -10,11 +10,6 @@ import { Spinner } from '@/components/common/Loading';
 import { TopItem } from '@/types';
 import { apiClient } from '@/lib/api';
 
-interface TopList {
-  type: string;
-  data: TopItem[];
-}
-
 export default function AnalyticsPage() {
   const [topCountries, setTopCountries] = useState<TopItem[]>([]);
   const [topCommands, setTopCommands] = useState<TopItem[]>([]);
@@ -24,8 +19,8 @@ export default function AnalyticsPage() {
     const fetchData = async () => {
       try {
         const [countriesRes, commandsRes] = await Promise.all([
-          apiClient.getTopList('countries', 15),
-          apiClient.getTopList('commands', 15),
+          apiClient.getTopList('countries', 15) as Promise<{ data: TopItem[] }>,
+          apiClient.getTopList('commands', 15) as Promise<{ data: TopItem[] }>,
         ]);
 
         setTopCountries(countriesRes.data || []);

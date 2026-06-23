@@ -11,17 +11,14 @@ import { apiClient } from '@/lib/api';
 
 export function StatisticsOverview() {
   const [stats, setStats] = useState<AttackStatistics | null>(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const data = await apiClient.getAttackStatistics();
+        const data = (await apiClient.getAttackStatistics()) as AttackStatistics;
         setStats(data);
-        setLoading(false);
       } catch (error) {
         console.error('Failed to fetch statistics:', error);
-        setLoading(false);
       }
     };
 

@@ -6,10 +6,10 @@
 
 import { useEffect, useState } from 'react';
 import { Attack } from '@/types';
-import { Badge } from './Badge';
-import { Card } from './Card';
-import { Spinner } from './Loading';
-import { formatDate, getSeverityColor } from '@/lib/utils';
+import { Badge } from '../common/Badge';
+import { Card } from '../common/Card';
+import { Spinner } from '../common/Loading';
+import { formatDate } from '@/lib/utils';
 import { apiClient } from '@/lib/api';
 import { getWebSocketClient } from '@/lib/websocket';
 
@@ -21,7 +21,7 @@ export function LiveAttackFeed() {
     // Fetch initial attacks
     const fetchAttacks = async () => {
       try {
-        const response = await apiClient.getAttacksFeed(20);
+        const response = (await apiClient.getAttacksFeed(20)) as { data: Attack[] };
         setAttacks(response.data);
         setLoading(false);
       } catch (error) {

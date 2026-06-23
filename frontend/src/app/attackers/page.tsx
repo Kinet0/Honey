@@ -10,7 +10,7 @@ import { Badge } from '@/components/common/Badge';
 import { Spinner } from '@/components/common/Loading';
 import { Attacker } from '@/types';
 import { apiClient } from '@/lib/api';
-import { formatDate, getThreatLevelColor } from '@/lib/utils';
+import { formatDate } from '@/lib/utils';
 
 export default function AttackersPage() {
   const [attackers, setAttackers] = useState<Attacker[]>([]);
@@ -19,7 +19,7 @@ export default function AttackersPage() {
   useEffect(() => {
     const fetchAttackers = async () => {
       try {
-        const response = await apiClient.listAttackers(undefined, undefined, 100);
+        const response = (await apiClient.listAttackers(undefined, undefined, 100)) as { data: Attacker[] };
         setAttackers(response.data);
         setLoading(false);
       } catch (error) {

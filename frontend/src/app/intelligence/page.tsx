@@ -33,8 +33,8 @@ export default function IntelligencePage() {
     const fetchData = async () => {
       try {
         const [cmdRes, credRes] = await Promise.all([
-          apiClient.getCommandFrequency(20),
-          apiClient.getCredentialsAnalysis('usernames', 20),
+          apiClient.getCommandFrequency(20) as Promise<{ data: CommandData[] }>,
+          apiClient.getCredentialsAnalysis('usernames', 20) as Promise<{ top_usernames: CredentialData[] }>,
         ]);
 
         setCommands(cmdRes.data || []);
