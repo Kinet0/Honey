@@ -1,7 +1,3 @@
-/**
- * Frontend package.json
- */
-{
   "name": "honeypot-dashboard",
   "version": "1.0.0",
   "description": "Real-time attack monitoring dashboard",
