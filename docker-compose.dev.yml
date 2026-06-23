@@ -30,7 +30,7 @@ services:
       DATABASE_URL: postgresql+asyncpg://honeypot_user:dev_password@postgresql:5432/honeypot_dashboard
       DEBUG: "true"
       SECRET_KEY: dev-secret-key
-      CORS_ORIGINS: ["http://localhost:3000", "http://localhost:3001"]
+      CORS_ORIGINS: "http://localhost:3000,http://localhost:3001"
     ports:
       - "8000:8000"
     volumes:

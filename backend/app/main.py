@@ -79,8 +79,8 @@ def create_app() -> FastAPI:
     app.include_router(attacks.router, prefix="/api/v1", tags=["attacks"])
     app.include_router(sessions.router, prefix="/api/v1", tags=["sessions"])
     app.include_router(attackers.router, prefix="/api/v1", tags=["attackers"])
-    app.include_router(intelligence.router, prefix="/api/v1", tags=["intellige
-    app.include_router(ws_routes.router, tags=["websocket"])nce"])
+    app.include_router(intelligence.router, prefix="/api/v1", tags=["intelligence"])
+    app.include_router(ws_routes.router, tags=["websocket"])
     app.include_router(analytics.router, prefix="/api/v1", tags=["analytics"])
 
     # Health check endpoint
