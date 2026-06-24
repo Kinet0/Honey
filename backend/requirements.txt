@@ -19,3 +19,6 @@ flake8==6.1.0
 mypy==1.7.1
 python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
+
+
+# what are things to add more on here?*
